@@ -205,35 +205,38 @@ public class ProfTest {
         System.out.println(Prof.select().toString());
     }
 
-
-
     /**
-     *
-     *
-     * Question 6 : testUpdate()
-     *
-     *
      * Test of update method, of class Prof.
-     *
-     *
      */
-
-
-
+    @Test
+    @Order(10)
+    public void testUpdate() {
+        System.out.println("Prof.Test.update");
+        int id = 3;
+        System.out.println("Before Updated the prof number " + String.valueOf(id));
+        System.out.println(Prof.select().toString());
+        Prof instance = new Prof("TJM_PROF9", "TJM_Prof9", "12/12/1985", "Mons");
+        instance.update(id);
+        System.out.println("After Updated the prof id = " + String.valueOf(id));
+        System.out.println(Prof.select().toString());
+    }
 
     /**
-     *
-     *
-     * Question 6 : testDelete()
-     *
-     *
-     Test of delete method, of class Prof.
-
-
+     * Test of delete method, of class Prof.
      */
+    @Test
+    @Order(11)
+    public void testDelete() {
+        System.out.println("Prof.Test.delete");
+        int id = 5;
+        System.out.println("Before Deleted the prof number " + String.valueOf(id));
+        Prof.delete(id);
+        System.out.println("After Deleted the prof number " + String.valueOf(id));
+    }
 
-
-
+    /**
+     * Test of select method, of class Prof.
+     */
     @Test
     @Order(12)
     public void testSelect_int() {
@@ -248,16 +251,9 @@ public class ProfTest {
     @Test
     @Order(13)
     public void testSelect_String() {
-        /**
-         *
-         *
-         * Question  5
-         *
-         *
-         * public void testSelect_String ()
-         *
-         *
-         */
+        System.out.println("Prof.Test.select_name");
+        String n = "NOFFABEL";
+        System.out.println(Prof.select(n).toString());
     }
 
     /**
